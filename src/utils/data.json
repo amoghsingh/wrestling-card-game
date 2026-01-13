@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Hulk Hogan",
+    "url": "hogan.JPG",
+    "rank": 1,
+    "matches": 700,
+    "chest": 52,
+    "biceps": 24,
+    "height": 6.9
+  },
+  {
+    "name": "Undertaker",
+    "url": "taker.jpg",
+    "rank": 2,
+    "matches": 600,
+    "chest": 51,
+    "biceps": 23,
+    "height": 6.11
+  },
+  {
+    "name": "The Rock",
+    "url": "rock.JPG",
+    "rank": 3,
+    "matches": 500,
+    "chest": 50,
+    "biceps": 22,
+    "height": 6.5
+  },
+  {
+    "name": "Austin",
+    "url": "austin.jpg",
+    "rank": 4,
+    "matches": 550,
+    "chest": 49,
+    "biceps": 22,
+    "height": 6.4
+  },
+  {
+    "name": "Triple H",
+    "url": "tripleh.JPG",
+    "rank": 5,
+    "matches": 560,
+    "chest": 50,
+    "biceps": 22,
+    "height": 6.4
+  },
+  {
+    "name": "Brock Lesnar",
+    "url": "brock.JPG",
+    "rank": 6,
+    "matches": 400,
+    "chest": 51,
+    "biceps": 23,
+    "height": 6.4
+  },
+  {
+    "name": "Shawn Michaels",
+    "url": "hbk.jpg",
+    "rank": 7,
+    "matches": 650,
+    "chest": 47,
+    "biceps": 21.5,
+    "height": 6.1
+  },
+  {
+    "name": "Kurt Angle",
+    "url": "kurt.JPG",
+    "rank": 8,
+    "matches": 480,
+    "chest": 48,
+    "biceps": 21.5,
+    "height": 6.2
+  },
+  {
+    "name": "Chris Jericho",
+    "url": "y2j.jpg",
+    "rank": 9,
+    "matches": 470,
+    "chest": 47,
+    "biceps": 21,
+    "height": 6
+  },
+  {
+    "name": "Kane",
+    "url": "kane.jpg",
+    "rank": 10,
+    "matches": 520,
+    "chest": 53,
+    "biceps": 23.5,
+    "height": 7
+  }
+]

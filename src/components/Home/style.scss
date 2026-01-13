@@ -1,0 +1,40 @@
+.bg{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    background: URL('/images/logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    filter:brightness(30%);
+}
+
+.home-text{
+    position: absolute;
+    z-index: 2;
+   margin-top:20%;
+   margin-left:30%;
+   text-align:center;
+
+    p{
+        color:rgb(70, 236, 70);
+        font-size: 24px;
+        font-family: 'Press Start 2P';
+    }
+
+    a{
+        border:none;
+        padding:15px 15px;
+        font-size: 22px;
+        font-family: 'Press Start 2P';
+        cursor:pointer;
+        margin-left:-50px;
+        text-decoration: none;
+    }
+
+    button:hover{
+        background-color: rgb(252, 252, 158);
+    }
+}
