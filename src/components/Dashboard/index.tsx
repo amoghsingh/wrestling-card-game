@@ -7,6 +7,7 @@ const Dashboard = () => {
   const [playerOneCards, setPlayerOneCards] = useState([]);
   const [playerTwoCards, setPlayertwoCards] = useState([]);
   const [autoPlayer, setAutoPlayer] = useState(null);
+  const [fadeIn , setFadeIn] = useState(false);
 
   const shuffleCards = (cards) => {
     for (let i = cards.length - 1; i > 0; i--) {
@@ -33,11 +34,25 @@ const Dashboard = () => {
     // console.log("arr2 : ", arr2);
   }, []);
 
+  useEffect(()=>{
+      if(autoPlayer){
+        const timer = setTimeout(()=>{ setFadeIn(true)}, 1000)
+        return ()=>{clearInterval(timer)}
+      }
+      
+  },[autoPlayer])
+
   const revealWrestler = () => {
+    
       setAutoPlayer(`images/${playerTwoCards[0]?.url}`);
+      //setFadeIn(true);
   }
 
 const selectValue = (e:MouseEvent) => {
+  
+  e.currentTarget.style.backgroundColor = "#4ec17c";
+  e.currentTarget.style.color = "#fff";
+  revealWrestler();
   const name = e.currentTarget.dataset.name;
   const val = e.currentTarget.dataset.value;
   const opponentValue = playerTwoCards[0][name];
@@ -45,8 +60,6 @@ const selectValue = (e:MouseEvent) => {
   if(name === "rank" && val<opponentValue){
     console.log("You win the card");
     setPlayerOneCards(prev => [...prev, playerTwoCards[0]]);
-   // const res = playerTwoCards.filter(x =>  x?.rank !== parseInt(opponentValue));
-    //setPlayertwoCards(res);
     setPlayertwoCards(prev=> prev.filter(x =>  x?.rank !== parseInt(opponentValue)));
   }
 }
@@ -87,15 +100,14 @@ console.log("playa 2 : ", playerTwoCards);
           </div>
         </div>
         <div className="vs">VS</div>
-        <div className="card2 swirl-in-right-bck" onClick={revealWrestler}>
+        <div className="card2 swirl-in-right-bck" >
           
           <img
-            className={autoPlayer?"photo":"photo1"}
-            src={autoPlayer? autoPlayer:`images/card_logo.png`}
+            className={autoPlayer? `photo3 ${fadeIn? "fade-in":"fade-out"}`:"photo1"}          
+            src={autoPlayer && fadeIn? autoPlayer:`images/card_logo.png`}
             alt="photo"
-
           />
-          {autoPlayer?(<>
+        {autoPlayer && fadeIn?(<>
            <div className="name">{playerTwoCards[0]?.name}</div>
           <div className="row">
             <div>Rank</div>
