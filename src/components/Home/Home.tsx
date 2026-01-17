@@ -11,7 +11,7 @@ const Home = () => {
         <p>It's time to play the Game..</p>
       
         <div>
-          <Link to="/dashboard">Start Game</Link>
+          <Link to="/dashboard" className="glow">Start Game</Link>
         </div>
         </div>
     </>
