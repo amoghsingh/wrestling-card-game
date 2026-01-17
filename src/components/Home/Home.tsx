@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <div className="bg"></div>
       <div className="home-text">
-        <p>It's time to play the Game..</p>
+        <p>It's time to play the Game...</p>
       
         <div>
           <Link to="/dashboard" className="glow">Start Game</Link>
