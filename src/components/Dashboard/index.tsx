@@ -64,14 +64,21 @@ const selectValue = (e:React.MouseEvent<HTMLElement>) => {
   e.currentTarget.style.color = "#fff";
   revealWrestler();
   const name = e.currentTarget.dataset.name as keyof Card;
-  const val = e.currentTarget.dataset.value;
-  const opponentValue = playerTwoCards[0][name];
-  console.log("opp value : ", opponentValue);
-  if(name === "rank" && val<opponentValue){
+  const val = Number(e.currentTarget.dataset.value);
+  if (Number.isNaN(val)) return;
+  
+  
+  if(name === "rank"){
+    const opponentValue = playerTwoCards[0][name];
+    if (opponentValue === undefined) return;
+  
+  if( val<opponentValue)
+  {
     console.log("You win the card");
     setPlayerOneCards(prev => [...prev, playerTwoCards[0]]);
-    setPlayertwoCards(prev=> prev.filter(x =>  x?.rank !== parseInt(opponentValue)));
+    setPlayertwoCards(prev=> prev.filter(x =>  x?.rank !== opponentValue));
   }
+}
 }
 
 console.log("playa 1 : ", playerOneCards);
