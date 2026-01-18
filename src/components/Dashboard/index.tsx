@@ -1,15 +1,25 @@
-import { MouseEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./style.scss";
 import cardData from "../../utils/data.json";
 
+interface Card {
+   name: string,
+   url: string,
+   rank: number,
+  matches: number
+    chest: number,
+    biceps: number,
+    height: number
+}
+
 const Dashboard = () => {
-  const [cards, setCards] = useState(cardData ? cardData : []);
-  const [playerOneCards, setPlayerOneCards] = useState([]);
-  const [playerTwoCards, setPlayertwoCards] = useState([]);
-  const [autoPlayer, setAutoPlayer] = useState(null);
+  const [cards] = useState(cardData ? cardData : []);
+  const [playerOneCards, setPlayerOneCards] = useState<Card[]>([]);
+  const [playerTwoCards, setPlayertwoCards] = useState<Card[]>([]);
+  const [autoPlayer, setAutoPlayer] = useState<string|null>(null);
   const [fadeIn , setFadeIn] = useState(false);
 
-  const shuffleCards = (cards) => {
+  const shuffleCards = (cards:Card[]) => {
     for (let i = cards.length - 1; i > 0; i--) {
       // Generate a random index
       const j = Math.floor(Math.random() * (i + 1));
@@ -48,12 +58,12 @@ const Dashboard = () => {
       //setFadeIn(true);
   }
 
-const selectValue = (e:MouseEvent) => {
+const selectValue = (e:React.MouseEvent<HTMLElement>) => {
   
   e.currentTarget.style.backgroundColor = "#4ec17c";
   e.currentTarget.style.color = "#fff";
   revealWrestler();
-  const name = e.currentTarget.dataset.name;
+  const name = e.currentTarget.dataset.name as keyof Card;
   const val = e.currentTarget.dataset.value;
   const opponentValue = playerTwoCards[0][name];
   console.log("opp value : ", opponentValue);
