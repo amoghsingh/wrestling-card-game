@@ -32,9 +32,50 @@
         cursor:pointer;
         margin-left:-50px;
         text-decoration: none;
+        animation: glow 1s ease-in-out infinite alternate;
+
+        &:visited {
+            color: blue; /* or any color you want */
+            text-decoration: none; /* optional */
+        }
+
+        &:hover{
+            color:#fff;
+        }
     }
+
+    @-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
 
     button:hover{
         background-color: rgb(252, 252, 158);
     }
+}
+
+@media screen and (min-width: 240px) and (max-width:440px){
+    .home-text{
+    position: absolute;
+    z-index: 2;
+   margin-top:75%;
+   margin-left:10%;
+   text-align:center;
+}
+}
+
+@media screen and (min-width: 700px) and (max-width:880px){
+
+    .home-text{
+    position: absolute;
+    z-index: 2;
+   margin-top:17%;
+   margin-left:15%;
+   text-align:center;
+}
 }
